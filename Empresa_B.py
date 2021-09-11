@@ -80,7 +80,7 @@ def actualizar():
 
 
 
-def eliminar():
+def eliminar():#elimina  los usuarios 
 
 	miConexion=sqlite3.connect("Usuarios")
 	miCursor=miConexion.cursor()
