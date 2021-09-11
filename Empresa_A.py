@@ -1,10 +1,50 @@
 
-
 from tkinter import *
 from tkinter import messagebox
 import sqlite3 
 
 root=Tk()
+
+
+#-------- ---------------comienzo de campos-----------------------------
+miFrame=Frame(root)
+miFrame.pack()
+
+miID=StringVar()
+miNombre=StringVar()
+miPass=StringVar()
+miApellido=StringVar()
+miDireccion=StringVar()
+
+
+cuadroID=Entry(miFrame,textvariable=miID)
+cuadroID.grid(row=0,column=1,padx=10,pady=10 )
+
+cuadroNombre=Entry(miFrame,textvariable=miNombre)
+cuadroNombre.grid(row=1,column=1,padx=10,pady=10 )
+cuadroNombre.config(fg="red",justify="right")
+
+
+cuadroPass=Entry(miFrame,textvariable=miPass)
+cuadroPass.grid(row=2,column=1,padx=10,pady=10 )
+cuadroPass.config(show="*")
+
+cuadroApellido=Entry(miFrame,textvariable=miApellido)
+cuadroApellido.grid(row=3,column=1,padx=10,pady=10 )
+
+
+cuadroDireccion=Entry(miFrame,textvariable=miDireccion)
+cuadroDireccion.grid(row=4,column=1,padx=10,pady=10 )
+
+textoComentario=Text(miFrame,width=16,height=5)
+textoComentario.grid(row=5,column=1,padx=10,pady=10 )
+scrollVert=Scrollbar(miFrame,command=textoComentario.yview)# el yview permite determinar sobre que eje se va a desplazar el scroll ya sea eje x o y 
+scrollVert.grid(row=5,column=2,sticky="nsew")
+
+textoComentario.config(yscrollcommand=scrollVert.set)
+
+
+
 
 
 #-------------------etiquetas---------------------
